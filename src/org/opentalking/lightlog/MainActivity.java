@@ -2,9 +2,14 @@ package org.opentalking.lightlog;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	private TextView tips;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -15,6 +20,29 @@ public class MainActivity extends Activity {
 		ILog.w("level w : Activity Life Cycle");
 		ILog.e("level e : Activity Life Cycle");
 		ILog.wtf("level wtf : Activity Life Cycle");
+		initViews();
+	}
+
+	private void initViews() {
+		ILog.v("level v : initViews");
+		ILog.i("level i : initViews");
+		ILog.d("level d : initViews");
+		ILog.w("level w : initViews");
+		ILog.e("level e : initViews");
+		ILog.wtf("level wtf : initViews");
+		tips = (TextView) findViewById(R.id.tips);
+		tips.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				ILog.v("level v : OnClickListener");
+				ILog.i("level i : OnClickListener");
+				ILog.d("level d : OnClickListener");
+				ILog.w("level w : OnClickListener");
+				ILog.e("level e : OnClickListener");
+				ILog.wtf("level wtf : OnClickListener");
+			}
+		});
 	}
 
 	@Override
