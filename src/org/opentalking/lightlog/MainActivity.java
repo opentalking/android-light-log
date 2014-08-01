@@ -35,11 +35,11 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				ILog.v("level v : OnClickListener");
-				ILog.i("level i : OnClickListener");
-				ILog.d("level d : OnClickListener");
-				ILog.w("level w : OnClickListener");
-				ILog.e("level e : OnClickListener");
+				ILog.v(new Throwable("test throwable"));
+				ILog.i("test message");
+				ILog.d("Main---TAG","test tag + message");
+				ILog.w("test message + ",new Throwable("test throwable"));
+				ILog.e("Main---TAG","test message"+new Throwable("test throwable"));
 				ILog.wtf("level wtf : OnClickListener");
 			}
 		});
