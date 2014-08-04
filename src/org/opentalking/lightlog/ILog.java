@@ -5,6 +5,8 @@ import android.util.Log;
 
 public final class ILog{
 	
+	private static final String ILOGTHROWABLE = "IlogThrowable";
+	private static final String DEFALUTTIPS = "execute!";
 	private static final boolean NEEDLOGS = BuildConfig.DEBUG;
 	private static final int FAILURECODE = -1;
 	
@@ -21,124 +23,144 @@ public final class ILog{
     }
     //repeat these type is wtf
     // verbose
+    public static int v() {
+    		return print_log(LogType.V,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
     public static int v(String msg) {
-    		return v(null,msg,null);
+		return print_log(LogType.V,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int v(Throwable tr) {
-    		return v(null,null,tr);
+		return print_log(LogType.V,null,null,tr);
     }
     
     public static int v(String msg, Throwable tr) {
-    		return v(null,msg,tr);
+		return print_log(LogType.V,null,msg,tr);
     }
     
     public static int v(String tag, String msg) {
-        return v(tag,msg,null);
+        return print_log(LogType.V,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int v(String tag, String msg, Throwable tr) {
         return print_log(LogType.V,tag,msg,tr);
     }
     //debug
+    public static int d() {
+		return print_log(LogType.D,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
     public static int d(String msg) {
-    		return d(null,msg,null);
+		return print_log(LogType.D,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int d(Throwable tr) {
-    		return d(null,null,tr);
+		return print_log(LogType.D,null,null,tr);
     }
     
     public static int d(String msg, Throwable tr) {
-    		return d(null,msg,tr);
+		return print_log(LogType.D,null,msg,tr);
     }
     
     public static int d(String tag, String msg) {
-    		return d(tag,msg,null);
+        return print_log(LogType.D,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int d(String tag, String msg, Throwable tr) {
-    		return print_log(LogType.D,tag,msg,tr);
+        return print_log(LogType.D,tag,msg,tr);
     }
     //info
+    public static int i() {
+		return print_log(LogType.I,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
     public static int i(String msg) {
-    		return i(null,msg,null);
+		return print_log(LogType.I,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int i(Throwable tr) {
-    		return i(null,null,tr);
+		return print_log(LogType.I,null,null,tr);
     }
     
     public static int i(String msg, Throwable tr) {
-    		return i(null,msg,tr);
+		return print_log(LogType.I,null,msg,tr);
     }
     
     public static int i(String tag, String msg) {
-    		return i(tag,msg,null);
+        return print_log(LogType.I,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int i(String tag, String msg, Throwable tr) {
-    		return print_log(LogType.I,tag,msg,tr);
+        return print_log(LogType.I,tag,msg,tr);
     }
     //warn
+    public static int w() {
+		return print_log(LogType.W,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
     public static int w(String msg) {
-    		return w(null,msg,null);
+		return print_log(LogType.W,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int w(Throwable tr) {
-    		return w(null,null,tr);
+		return print_log(LogType.W,null,null,tr);
     }
     
     public static int w(String msg, Throwable tr) {
-    		return w(null,msg,tr);
+		return print_log(LogType.W,null,msg,tr);
     }
     
     public static int w(String tag, String msg) {
-    		return w(tag,msg,null);
+        return print_log(LogType.W,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int w(String tag, String msg, Throwable tr) {
-    		return print_log(LogType.W,tag,msg,tr);
+        return print_log(LogType.W,tag,msg,tr);
     }
     //error
+    
+    public static int e() {
+		return print_log(LogType.E,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
+    
     public static int e(String msg) {
-    		return e(null,msg,null);
+		return print_log(LogType.E,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int e(Throwable tr) {
-    		return e(null,null,tr);
+		return print_log(LogType.E,null,null,tr);
     }
     
     public static int e(String msg, Throwable tr) {
-    		return e(null,msg,tr);
+		return print_log(LogType.E,null,msg,tr);
     }
     
     public static int e(String tag, String msg) {
-    		return e(tag,msg,null);
+        return print_log(LogType.E,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int e(String tag, String msg, Throwable tr) {
-    		return print_log(LogType.E,tag,msg,tr);
+        return print_log(LogType.E,tag,msg,tr);
     }
     //assert
+    public static int wtf() {
+		return print_log(LogType.A,null,DEFALUTTIPS,new Throwable(ILOGTHROWABLE));
+    }
     public static int wtf(String msg) {
-    		return wtf(null,msg,null);
+		return print_log(LogType.A,null,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int wtf(Throwable tr) {
-    		return wtf(null,null,tr);
+		return print_log(LogType.A,null,null,tr);
     }
     
     public static int wtf(String msg, Throwable tr) {
-    		return wtf(null,msg,tr);
+		return print_log(LogType.A,null,msg,tr);
     }
     
     public static int wtf(String tag, String msg) {
-    		return wtf(tag,msg,null);
+        return print_log(LogType.A,tag,msg,new Throwable(ILOGTHROWABLE));
     }
     
     public static int wtf(String tag, String msg, Throwable tr) {
-    		return print_log(LogType.A,tag,msg,tr);
+        return print_log(LogType.A,tag,msg,tr);
     }
 
 	@SuppressLint("DefaultLocale")
@@ -148,8 +170,7 @@ public final class ILog{
 			return FAILURECODE;
 		}
 		
-		Throwable throwable = new Throwable();
-		StackTraceElement[] stackTrace = throwable.getStackTrace();
+		StackTraceElement[] stackTrace = thr.getStackTrace();
 		
 		String className = stackTrace[1].getFileName();
 		String methodName = stackTrace[1].getMethodName();
@@ -172,51 +193,53 @@ public final class ILog{
 		
 		String msgStr = prefixBuilder.toString();
 		
+		boolean isILogThrowable = thr.getMessage().equals(ILOGTHROWABLE);
+		
 		if(type == LogType.V){
-			if(thr != null){
-				return Log.v(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.v(tagStr, msgStr);
+			}else{
+				return Log.v(tagStr, msgStr , thr);
 			}
 		}
 		
 		if(type == LogType.D){
-			if(thr != null){
-				return Log.d(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.d(tagStr, msgStr);
+			}else{
+				return Log.d(tagStr, msgStr , thr);
 			}
 		}
 		
 		if(type == LogType.I){
-			if(thr != null){
-				return Log.i(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.i(tagStr, msgStr);
+			}else{
+				return Log.i(tagStr, msgStr , thr);
 			}
 		}
 		
 		if(type == LogType.W){
-			if(thr != null){
-				return Log.w(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.w(tagStr, msgStr);
+			}else{
+				return Log.w(tagStr, msgStr , thr);
 			}
 		}
 		
 		if(type == LogType.E){
-			if(thr != null){
-				return Log.e(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.e(tagStr, msgStr);
+			}else{
+				return Log.e(tagStr, msgStr , thr);
 			}
 		}
 		
 		if(type == LogType.A){
-			if(thr != null){
-				return Log.wtf(tagStr, msgStr , thr);
-			}else{
+			if(isILogThrowable){
 				return Log.wtf(tagStr, msgStr);
+			}else{
+				return Log.wtf(tagStr, msgStr , thr);
 			}
 		}
 		
