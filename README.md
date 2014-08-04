@@ -9,6 +9,7 @@ Now,you have  `light-log`
 Just like Log
 
 ```
+		ILog.v();
 		ILog.v("level v : Activity Life Cycle");
 		ILog.i("level i : Activity Life Cycle");
 		ILog.d("level d : Activity Life Cycle");
